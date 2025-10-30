@@ -1,0 +1,5 @@
+_id,fecha,mesa,pedidos[0]._id.$oid,pedidos[1]._id.$oid,pedidos[2]._id.$oid,pedidos[0].tipo,pedidos[1].tipo,pedidos[2].tipo,pedidos[0].precio,pedidos[1].precio,pedidos[2].precio,pedidos[0].descripcion,pedidos[1].descripcion,pedidos[2].descripcion,importeTotal
+68fb899639acfddec489a2d8,2025-10-24T14:13:42.023Z,,,,,,,,,,,,,,
+68ff8992c33667705d98905c,2025-10-27T15:02:42.894Z,,,,,,,,,,,,,,
+68ff8b7cc33667705d98905e,2025-10-27T15:10:52.857Z,,,,,,,,,,,,,,
+68ff93b349ff8e9ecdb9c1cd,new Date(),1,,,,menu1,menu4,bebida3,20.5,10,9.45,Trucha arcoíris al horno con cecina y puré de coliflor,Hamburguesa Smash Burger clásica,Rioja Crianza,100
