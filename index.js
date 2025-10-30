@@ -128,5 +128,3 @@ async function realizarConsultaBD(req, res, tipoConsulta, coleccionBD) {
     await client.close();
   }
 }
-
-
