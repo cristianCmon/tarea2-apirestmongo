@@ -53,9 +53,13 @@ app.get('/menus/:id', async (req, res) => {
   realizarConsultaBD(req, res, "LEER", "menus");
 });
 
-// app.put('/jugadores/actualizar/:id', async (req, res) => {
-//   realizarConsultaBD(req, res, "ACTUALIZAR");
-// });
+app.get('/mesas', async (req, res) => {
+  realizarConsultaBD(req, res, "LEER", "mesas");
+});
+
+app.put('/mesas/:id', async (req, res) => {
+  realizarConsultaBD(req, res, "ACTUALIZAR", "mesas");
+});
 
 // app.delete('/jugadores/borrar/:id', async (req, res) => {
 //   realizarConsultaBD(req, res, "BORRAR");
@@ -96,7 +100,7 @@ async function realizarConsultaBD(req, res, tipoConsulta, coleccionBD) {
         res.send(result);
 
         break;
-/*
+
       case "ACTUALIZAR":
         id = req.params.id;
         body = req.body;
@@ -105,7 +109,7 @@ async function realizarConsultaBD(req, res, tipoConsulta, coleccionBD) {
         res.status(200).json({ message: "Registro ACTUALIZADO CORRECTAMENTE" });
 
         break;
-
+/*
       case "BORRAR":
         id = req.params.id;
 
