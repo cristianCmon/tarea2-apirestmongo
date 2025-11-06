@@ -1,6 +1,6 @@
-_id,mesa,ocupada,bloqueada
-68ff86e7d56a1efc82d13d23,0,false,false
-68ff8743d56a1efc82d13d24,1,false,false
-68ff875cd56a1efc82d13d25,2,false,false
-68ff878ad56a1efc82d13d26,3,false,false
-68ff879fd56a1efc82d13d27,4,false,false
+_id,numero,ocupada,bloqueada
+690a39d65597a08e374c2c1e,0,false,false
+690a39d65597a08e374c2c1f,1,false,false
+690a39d65597a08e374c2c20,2,false,false
+690a39d65597a08e374c2c21,3,false,false
+690a39d65597a08e374c2c22,4,false,false

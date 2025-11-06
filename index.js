@@ -36,7 +36,7 @@ async function run() {
 run().catch(console.dir);
 
 app.listen(puerto, () => {
-  console.log(`\nAPI REST escuchando en puerto ${puerto}...`);
+  console.log(`\nAPI-REST RESTAURANTE escuchando en puerto ${puerto}...`);
 });
 
 
