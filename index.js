@@ -7,9 +7,9 @@ app.use(express.urlencoded({extended: true}));
 
 const { MongoClient, ServerApiVersion } = require("mongodb");
 const mongo = require("mongodb"); // necesario para generar correctamente ObjectId
+//const uri = 'mongodb+srv://root:root@cluster0.m6rrr28.mongodb.net/';
 const uriLocal = "mongodb://localhost:27017/";
 const uri = uriLocal;
-//const uri = 'mongodb+srv://root:root@cluster0.m6rrr28.mongodb.net/';
 
 
 // https://www.mongodb.com/docs/drivers/node/current/connect/mongoclient/
@@ -45,6 +45,10 @@ app.post('/comandas', async (req, res) => {
   realizarConsultaBD(req, res, "CREAR", "comandas");
 });
 
+app.get('/comandas/:id', async (req, res) => {
+  realizarConsultaBD(req, res, "LEER", "comandas");
+});
+
 app.get('/menus', async (req, res) => {
   realizarConsultaBD(req, res, "LEER", "menus");
 });
@@ -61,15 +65,13 @@ app.get('/mesas/:id', async (req, res) => {
   realizarConsultaBD(req, res, "LEER", "mesas");
 });
 
+app.put('/comandas/:id', async (req, res) => {
+  realizarConsultaBD(req, res, "ACTUALIZAR", "comandas");
+});
+
 app.put('/mesas/:id', async (req, res) => {
   realizarConsultaBD(req, res, "ACTUALIZAR", "mesas");
 });
-
-// app.delete('/jugadores/borrar/:id', async (req, res) => {
-//   realizarConsultaBD(req, res, "BORRAR");
-// });
-
-
 
 
 //CONSULTAS
@@ -87,8 +89,10 @@ async function realizarConsultaBD(req, res, tipoConsulta, coleccionBD) {
         body = req.body;
 
         result = await coleccion.insertOne(body);
-        res.status(200).json({ message: "Registro CREADO CORRECTAMENTE - id: " + result.insertedId });
-
+        //res.status(200).json({ message: "Registro CREADO CORRECTAMENTE - id: " + result.insertedId });
+        res.status(201).json({ id: new mongo.ObjectId(result.ObjectId) });
+        //res.send(result.insertedId);
+        //return;
         break;
 
       case "LEER":
@@ -111,7 +115,6 @@ async function realizarConsultaBD(req, res, tipoConsulta, coleccionBD) {
 
         result = await coleccion.updateOne({ _id: new mongo.ObjectId(id) }, {$set:body});
         res.status(200).json({ message: "Registro ACTUALIZADO CORRECTAMENTE" });
-
         break;
 /*
       case "BORRAR":
