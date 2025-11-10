@@ -6,3 +6,6 @@ GET http://localhost:3000/menus/68fb7e9f187bffe599334d99
 
 ###
 GET http://localhost:3000/mesas/
+
+###
+GET http://localhost:3000/mesas/68ff86e7d56a1efc82d13d23

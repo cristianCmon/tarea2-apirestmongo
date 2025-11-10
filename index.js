@@ -57,6 +57,10 @@ app.get('/mesas', async (req, res) => {
   realizarConsultaBD(req, res, "LEER", "mesas");
 });
 
+app.get('/mesas/:id', async (req, res) => {
+  realizarConsultaBD(req, res, "LEER", "mesas");
+});
+
 app.put('/mesas/:id', async (req, res) => {
   realizarConsultaBD(req, res, "ACTUALIZAR", "mesas");
 });
