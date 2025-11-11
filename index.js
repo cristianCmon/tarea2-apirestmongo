@@ -88,11 +88,13 @@ async function realizarConsultaBD(req, res, tipoConsulta, coleccionBD) {
       case "CREAR":
         body = req.body;
 
-        result = await coleccion.insertOne(body);
-        //res.status(200).json({ message: "Registro CREADO CORRECTAMENTE - id: " + result.insertedId });
-        res.status(201).json({ id: new mongo.ObjectId(result.ObjectId) });
-        //res.send(result.insertedId);
-        //return;
+        result = await coleccion.insertOne({body}); // Array de objetos
+        console.log(result);
+        console.log(result.insertedId);
+       
+        // Esta respuesta (id de comanda recién creada) sobreescribirá el campo _id del modelo java
+        res.send({"_id" : result.insertedId.toString()});
+
         break;
 
       case "LEER":
