@@ -89,8 +89,8 @@ async function realizarConsultaBD(req, res, tipoConsulta, coleccionBD) {
         body = req.body;
 
         result = await coleccion.insertOne({body}); // Array de objetos
-        console.log(result);
-        console.log(result.insertedId);
+        // console.log(result);
+        // console.log(result.insertedId);
        
         // Esta respuesta (id de comanda recién creada) sobreescribirá el campo _id del modelo java
         res.send({"_id" : result.insertedId.toString()});
@@ -117,16 +117,8 @@ async function realizarConsultaBD(req, res, tipoConsulta, coleccionBD) {
 
         result = await coleccion.updateOne({ _id: new mongo.ObjectId(id) }, {$set:body});
         res.status(200).json({ message: "Registro ACTUALIZADO CORRECTAMENTE" });
-        break;
-/*
-      case "BORRAR":
-        id = req.params.id;
-
-        result = await coleccion.deleteOne({ _id: new mongo.ObjectId(id) });
-        res.status(200).json({ message: "Registro BORRADO CORRECTAMENTE" });
 
         break;
-        */
     }
 
   } catch (err) {
