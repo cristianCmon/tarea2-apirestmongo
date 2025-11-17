@@ -7,9 +7,9 @@ app.use(express.urlencoded({extended: true}));
 
 const { MongoClient, ServerApiVersion } = require("mongodb");
 const mongo = require("mongodb"); // necesario para generar correctamente ObjectId
-//const uri = 'mongodb+srv://root:root@cluster0.m6rrr28.mongodb.net/';
 const uriLocal = "mongodb://localhost:27017/";
 const uri = uriLocal;
+// const uri = 'mongodb+srv://root:9YGejz0AqkPqhHEM@cluster0.m6rrr28.mongodb.net/';
 
 
 // https://www.mongodb.com/docs/drivers/node/current/connect/mongoclient/
@@ -80,7 +80,7 @@ async function realizarConsultaBD(req, res, tipoConsulta, coleccionBD) {
     let result, id, body;
 
     const conexion = await client.connect();
-    const baseDatos = conexion.db('cafeteria');
+    const baseDatos = conexion.db('restaurante');
     const coleccion = baseDatos.collection(coleccionBD);
     
     switch (tipoConsulta) {
@@ -88,7 +88,7 @@ async function realizarConsultaBD(req, res, tipoConsulta, coleccionBD) {
       case "CREAR":
         body = req.body;
 
-        result = await coleccion.insertOne({body}); // Array de objetos
+        result = await coleccion.insertOne(body); // Array de objetos
         // console.log(result);
         // console.log(result.insertedId);
        

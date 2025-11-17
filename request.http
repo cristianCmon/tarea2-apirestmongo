@@ -11,4 +11,4 @@ GET http://localhost:3000/mesas/
 GET http://localhost:3000/mesas/68ff86e7d56a1efc82d13d23
 
 ###
-GET http://localhost:3000/comandas/
+GET http://localhost:3000/comandas/691af82923ff867ed1b5123f

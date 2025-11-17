@@ -1,0 +1,52 @@
+% [Tamaño principal de la fuente del documento, tamaño del papel, con título (crea salto de página)]{Tipo de documento}
+\documentclass[12pt, a4paper, titlepage]{article}
+\usepackage[utf8]{inputenc}
+% Traduce expresiones al español
+\usepackage[spanish]{babel}
+\usepackage{setspace}
+
+\usepackage{graphicx}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\graphicspath{ {./capturas/} }
+
+% Permite utilizar labeling para listar de forma personalizada
+\usepackage{scrextend}
+% Permite centrar verticalmente m{}
+\usepackage{array}
+% Permite colorear texto
+\usepackage{xcolor}
+
+\title{\LARGE \textbf{Proyecto Aplicación Restaurante} \\[2ex] \Large Android - Express - JavaFX}
+\author{\\[20ex]Cristian Fernández}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\doublespacing
+\noindent \\
+\tableofcontents % Índice
+\newpage
+
+
+\section{Descripción del proyecto}
+\noindent \\Este proyecto trata sobre la creación de una aplicación móvil, una aplicación de escritorio y una API-Rest \\
+
+\newpage
+
+\section{Problemas encontrados}
+\noindent \\Falta de motivación. 
+\newpage
+
+\section{Bibliografía}
+\noindent \\Enlaces a información consultada:
+\begin{itemize}
+    \item youtube
+    \item stack overflow
+    \item geeksforgeeks
+    \item mongodb.com/community
+    \item IA de google
+\end{itemize}
+
+\end{document}

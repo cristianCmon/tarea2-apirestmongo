@@ -1,0 +1,4 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{\numberline {1}Descripción del proyecto}{2}{}%
+\contentsline {section}{\numberline {2}Problemas encontrados}{3}{}%
+\contentsline {section}{\numberline {3}Bibliografía}{4}{}%
